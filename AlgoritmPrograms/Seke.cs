@@ -54,7 +54,7 @@ namespace AlgoritmPrograms
         //            }
         //        }
 
-       
+
         //    }
         //}
 
@@ -62,7 +62,37 @@ namespace AlgoritmPrograms
 
         public void DynamicCoin()
         {
+            Console.WriteLine("inter ur amount");
+            int total = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("inter ur coins value");
+            var n = Convert.ToInt32(Console.ReadLine());
+            int sum = total;
+            List<int> coinsList = new List<int>();
+            List<int> coins = new List<int>();
+            coins.Add(n);
+            for (int i = 0; i < coins.Count; i++)
+            {
+                var Numbers = total / coins[i];
+                coinsList.Add(Numbers);         // ba estefade az a mitonim tedad seke va hamon meghdar da har marhalaro ro neshon bedim.
+                total -= Numbers * coins[i];
+                if (total == 0)
+                {
+                   
+
+                    break;
+                }
+                foreach (var s in coinsList)
+                {
+                    Console.WriteLine("amount of coins i:" + coins[i] + " " + coinsList[i]);
+                }
+
+                Console.WriteLine("inter ur coins value");
+                n = Convert.ToInt32(Console.ReadLine());
+                coins.Add(n);
+
+            }
 
         }
     }
 }
+

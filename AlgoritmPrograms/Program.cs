@@ -2,6 +2,11 @@
 //Console.WriteLine("Hello, World!");
 using AlgoritmPrograms;
 
+
+ArrayExample ex = new ArrayExample();
+ex.BookExampArray();
+//Seke s = new Seke();    
+//s.DynamicCoin();
 //Daramad d = new Daramad();
 //d.Tax();
 

@@ -8,13 +8,14 @@ namespace AlgoritmPrograms
 {
     public class Daramad
     {
-        int N = 2;
         public void Tax()
         {
+            Console.WriteLine("tedad afrad ra vared konid");
+            int n = Convert.ToInt32(Console.ReadLine());
             int tax;
-            for(int i = 0; i < N; i++)
+            for(int i = 0; i < n; i++)
             {
-                Console.WriteLine("درامد را وارد کنید");
+                Console.WriteLine("Inter a Person Income");
                 int p = Convert.ToInt32(Console.ReadLine()); 
                 if (p <= 5000)
                 {

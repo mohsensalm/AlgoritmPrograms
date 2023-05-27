@@ -4,7 +4,7 @@ using AlgoritmPrograms;
 
 
 ArrayExample ex = new ArrayExample();
-ex.BookExampArray();
+ex.Tekrari();
 //Seke s = new Seke();    
 //s.DynamicCoin();
 //Daramad d = new Daramad();

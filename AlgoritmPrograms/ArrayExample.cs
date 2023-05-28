@@ -86,7 +86,7 @@ namespace AlgoritmPrograms
 
         public void DifrenceBetweanTwoList()
         {
-            int[] arr1 = new[] { 3, 2, 5, 6, 7, 8 ,11};
+            int[] arr1 = new[] { 3, 2, 5, 6, 7, 8 ,11,13};
             int[] arr2 = new[] { 3, 3, 5, 5, 7, 8 ,7,9,11};
             List<int> arr3 = new List<int>();
             int s = 0;
@@ -105,9 +105,8 @@ namespace AlgoritmPrograms
                             j++;
                             s++;
 
-                            break;
                         }
-                        
+                        else
                         {
                             j++;
                         }

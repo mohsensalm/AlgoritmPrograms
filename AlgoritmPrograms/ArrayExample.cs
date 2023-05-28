@@ -86,24 +86,40 @@ namespace AlgoritmPrograms
 
         public void DifrenceBetweanTwoList()
         {
-            int[] arr1 = new[] { 3, 2, 5, 6, 7 };
-            int[] arr2 = new[] { 3, 3, 4, 5, 7, 9 };
+            int[] arr1 = new[] { 3, 2, 5, 6, 7, 8 ,11};
+            int[] arr2 = new[] { 3, 3, 5, 5, 7, 8 ,7,9,11};
+            List<int> arr3 = new List<int>();
             int s = 0;
             for (int i = 0; i < arr1.Length; i++)
             {
                 for (int j = 0; j < arr2.Length; j++)
                 {
-                    if (j<arr2.Length)
+                    while (j < arr2.Length)
                     {
-                        j++;
-                    }
-                    else
-                    {
-                            
+                        if (arr1[i] == arr2[j])
+                        {
+                         
+                            arr3.Add(arr2[j]);
+                            arr1[i] = 0;
+                            arr2[j] = 0;
+                            j++;
+                            s++;
+
+                            break;
+                        }
+                        
+                        {
+                            j++;
+                        }
                     }
                 }
             }
 
+            foreach (var num in arr3)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine("there is "+s+" similar numbers ");
         }
 
     }

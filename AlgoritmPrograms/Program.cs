@@ -3,8 +3,21 @@
 using AlgoritmPrograms;
 
 
-ArrayExample ex = new ArrayExample();
-ex.DifrenceBetweanTwoList();
+//ArrayExample ex = new ArrayExample();
+//ex.DifrenceBetweanTwoList();
+
+
+
+
+
+
+
+
+EightQueensSolver solver = new EightQueensSolver();
+solver.Solve();
+
+
+
 //Seke s = new Seke();    
 //s.DynamicCoin();
 //Daramad d = new Daramad();

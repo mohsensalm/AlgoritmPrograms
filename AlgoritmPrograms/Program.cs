@@ -3,18 +3,48 @@
 using AlgoritmPrograms;
 
 
+
+
+
+
+
+
+int[] o = {1, 2, 3, 5};
+
+var permutation = new Permutations();
+permutation.Permute(o);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //ArrayExample ex = new ArrayExample();
 //ex.DifrenceBetweanTwoList();
 
 
+//int[] o = {1, 4, 3, 5};
+
+//Permutations p = new Permutations();
+
+//p.permution( o);
 
 
 
-
-
-
-EightQueensSolver solver = new EightQueensSolver();
-solver.Solve();
+//EightQueensSolver solver = new EightQueensSolver();
+//solver.Solve();
 
 
 

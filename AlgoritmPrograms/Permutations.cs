@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,26 +89,144 @@ namespace AlgoritmPrograms
         //        tempList.Remove(tempList.Capacity - 1);
         //    }
 
+        //public List<List<int>> Permute(List<int> nums)
+        //{
+        //    var res = new List<List<int>>();
+        //    Helper(res, new List<int>(), nums);
+        //    return res;
+        //}
+
+        //private void Helper(List<List<int>> res, List<int> temp, List<int> nums)
+        //{
+        //    if (temp.Count == nums.Count)
+        //        res.Add(new List<int>(temp));
+        //    else
+        //        foreach (var num in nums)
+        //            if (!temp.Contains(num))
+        //            {
+        //                temp.Add(num);
+        //                Helper(res, temp, nums);
+        //                temp.RemoveAt(temp.Count - 1);
+        //            }
+
+        //}
+
+        //public List<List<int>> permute(int[] nums)
+        //{
+        //    var result = new List<List<int>>();
+        //    BackTrack(result, new List<int>(), nums);
+        //    return result;
+        //}
+
+        //public void BackTrack(List<List<int>> resualt, List<int> temp, int[] nums)
+        //{
+
+        //        if (temp.Count() == nums.Length)
+        //        {
+        //            resualt.Add(new List<int>(temp));
+        //            return;
+        //        }
+
+
+        //        foreach (var number in nums)
+        //        {
+        //            if (temp.Contains(number))
+        //            {
+        //                continue;
+        //            }
+
+        //            temp.Add(number);
+        //            BackTrack(resualt, temp, nums);
+        //            temp.Remove(temp.Count() - 1);        
+        //        }
+
+
+        //}
+
+
+
+
         public IList<IList<int>> Permute(int[] nums)
         {
-            var res = new List<IList<int>>();
-            Helper(res, new List<int>(), nums);
-            return res;
+            IList<IList<int>> permutations = new List<IList<int>>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                Combination(nums, i, permutations, new List<int>());
+            }
+
+            return permutations;
         }
 
-        private void Helper(List<IList<int>> res, List<int> temp, int[] nums)
+        public void Combination(int[] nums, int currentIndex, IList<IList<int>> list, IList<int> contains)
         {
-            if (temp.Count == nums.Length)
-                res.Add(new List<int>(temp));
+            contains.Add(nums[currentIndex]);
+
+            if (contains.Count == nums.Length) list.Add(contains);
             else
-                foreach (var t in nums)
-                    if (!temp.Contains(t))
+            {
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    if (i != currentIndex && contains.Contains(nums[i]) == false)
                     {
-                        temp.Add(t);
-                        Helper(res, temp, nums);
-                        temp.RemoveAt(temp.Count - 1);
+                        Combination(nums, i, list, new List<int>(contains));
                     }
-           
+                }
+            }
+        }
+
+
+
+
+
+
+        public IList<IList<int>> MyPermute(int[] nums)
+        {
+            IList<IList<int>> permutations = new List<IList<int>>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                MyCombination(nums, i, permutations, new List<int>());
+            }
+
+            return permutations;
+        }
+
+        public void MyCombination(int[] nums,int curentIndex,IList<IList<int>>resualt,List<int>empty)
+        {
+            empty.Add(curentIndex);
+            if (empty.Count == nums.Length) resualt.Add(empty);
+            else
+            {
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    if (i!=curentIndex&& empty.Contains(nums[i])==false)
+                    {
+                        MyCombination(nums,i,resualt,empty);
+                    }
+                }
+            }
         }
     }
 }
+ 
+
+
+
+
+
+
+
+
+
+  //  for (int i = 0; i<nums.Length; i++)
+//        {
+//            if (temp.Contains(temp[i]))
+//            {
+//                continue;
+//            }
+
+//            temp.Add(temp[i]);
+//            BackTrack(resualt, temp, nums);
+//            temp.Remove(temp.Count() - 1);
+//        }

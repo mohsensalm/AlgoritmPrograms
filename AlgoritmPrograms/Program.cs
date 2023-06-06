@@ -3,16 +3,53 @@
 using AlgoritmPrograms;
 
 
+var nums = new   [] {1, 2, 3};
+var permutaion = new Permutations();
+//permutaion.Permute(nums);
+permutaion.MyPermute(nums);
 
 
 
 
 
 
-int[] o = {1, 2, 3, 5};
 
-var permutation = new Permutations();
-permutation.Permute(o);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//List<int> o = new List<int>{4,32,5 ,63}      ;
+
+//var permutation = new Permutations();
+//permutation.Permute(o);
 
 
 

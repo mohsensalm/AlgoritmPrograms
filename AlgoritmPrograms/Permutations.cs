@@ -182,34 +182,107 @@ namespace AlgoritmPrograms
 
         public IList<IList<int>> MyPermute(int[] nums)
         {
-            IList<IList<int>> permutations = new List<IList<int>>();
+            IList<IList<int>> resualt = new List<IList<int>>();
 
             for (int i = 0; i < nums.Length; i++)
             {
-                MyCombination(nums, i, permutations, new List<int>());
+                MyCombination(nums, i, resualt, new List<int>());
             }
 
-            return permutations;
+            return resualt;
         }
 
-        public void MyCombination(int[] nums,int curentIndex,IList<IList<int>>resualt,List<int>empty)
+        public void MyCombination(int[] nums, int curentIndex, IList<IList<int>> resualt, List<int> empty)
         {
-            empty.Add(curentIndex);
-            if (empty.Count == nums.Length) resualt.Add(empty);
+            empty.Add(nums[curentIndex]);
+            if (empty.Count() == nums.Length) resualt.Add(empty);
             else
             {
                 for (int i = 0; i < nums.Length; i++)
                 {
-                    if (i!=curentIndex&& empty.Contains(nums[i])==false)
+                    if (i != curentIndex && empty.Contains(nums[i]) == false)
                     {
-                        MyCombination(nums,i,resualt,empty);
+                        MyCombination(nums, i, resualt, empty);
                     }
+                }
+            }
+        }
+
+        //public IList<IList<int>> DuplicatePermut(int[] num)
+        //{
+        //    var resualt = new List<IList<int>>();
+        //    var used = new bool[num.Length];
+        //    Array.Sort(num);
+
+        //    for (int i = 0; i < num.Length; i++)
+        //    {
+        //        Helper(num, resualt, new List<int>(), i, used);
+
+        //    }
+
+        //    return resualt;
+
+        //}
+
+        //public void Helper(int[] num, List<IList<int>> result, List<int> empty, int currentIndex,bool[]used)
+        //{
+        //    used[currentIndex] = true;
+        //    empty.Add(num[currentIndex]);
+
+
+        //    if (empty.Count == num.Length )                     //&& !result.Contains(empty) 
+        //    {
+        //        result.Add(empty);
+        //    }
+        //    else
+        //    {
+        //        for (int i = 0; i < num.Length; i++)
+        //        {
+        //            if (i != currentIndex && empty.Contains(num[i]) == false)
+        //            {
+        //                used[i] = false;
+
+        //                Helper(num, result, empty, i , used);
+        //            }
+        //            else
+        //            {
+        //                used[i] = false;
+
+        //            }
+
+        //        }
+        //    }
+        //}
+        public IList<IList<int>> PermuteUnique(int[] nums)
+        {
+            IList<IList<int>> ans = new List<IList<int>>();
+            Array.Sort(nums);
+            Backtrack(nums, new bool[nums.Length], new List<int>(), ans);
+            return ans;
+        }
+
+        private void Backtrack(int[] nums, bool[] taken, IList<int> li, IList<IList<int>> ans)
+        {
+            if (li.Count == nums.Length)
+            {
+                ans.Add(new List<int>(li));
+                return;
+            }
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (!taken[i] && (i == 0 || taken[i - 1] || nums[i] != nums[i - 1]))
+                {
+                    taken[i] = true;
+                    li.Add(nums[i]);
+                    Backtrack(nums, taken, li, ans);
+                    taken[i] = false;
+                    li.RemoveAt(li.Count - 1);
                 }
             }
         }
     }
 }
- 
 
 
 
@@ -219,7 +292,8 @@ namespace AlgoritmPrograms
 
 
 
-  //  for (int i = 0; i<nums.Length; i++)
+
+//  for (int i = 0; i<nums.Length; i++)
 //        {
 //            if (temp.Contains(temp[i]))
 //            {

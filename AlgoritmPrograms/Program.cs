@@ -3,7 +3,7 @@
 using AlgoritmPrograms;
 
 
-var nums = new   [] {1, 2, 3};
+var nums = new   [] {1,1,2};
 var permutaion = new Permutations();
 //permutaion.Permute(nums);
 permutaion.MyPermute(nums);
@@ -12,7 +12,8 @@ permutaion.MyPermute(nums);
 
 
 
-
+var per = new Permutations();
+per.PermuteUnique(nums);
 
 
 

@@ -5,8 +5,8 @@ using AlgoritmPrograms;
 
 
 
-var area = new Reactangle();
-area.ComputeArea(-3, 0,3,4,0,-1,9,2);
+//var area = new Reactangle();
+//area.ComputeArea(-3, 0,3,4,0,-1,9,2);
 
 
 
@@ -41,9 +41,9 @@ area.ComputeArea(-3, 0,3,4,0,-1,9,2);
 
 
 
-//int [] coins = {8, 5, 6};
-//var seke = new Seke();
-// seke.Change(10,coins);
+int[] coins = { 8, 5, 4 };
+var seke = new Seke();
+seke.Change(20, coins);
 
 
 

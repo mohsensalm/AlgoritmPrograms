@@ -103,7 +103,11 @@ namespace AlgoritmPrograms
             for (int j = 1; j <= amount; j++)
                 if (j - coins[i] >= 0)
                     dp[j] += dp[j - coins[i]];
-
+            foreach (var VARIABLE in dp)
+            {
+                Console.WriteLine(dp[amount]);
+                
+            }
             return dp[amount];
 
         }

@@ -3,23 +3,47 @@
 using AlgoritmPrograms;
 
 
-var nums = new   [] {1,1,2};
-var permutaion = new Permutations();
-//permutaion.Permute(nums);
-permutaion.MyPermute(nums);
 
 
-
-
-
-var per = new Permutations();
-per.PermuteUnique(nums);
+var area = new Reactangle();
+area.ComputeArea(-3, 0,3,4,0,-1,9,2);
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var nums = new[] { 1, 1, 1, 2 };
+//var permutaion = new Permutations();
+////permutaion.Permute(nums);
+//permutaion.MyPermute(nums);
+
+
+
+
+
+//var per = new Permutations();
+//per.PermuteUnique(nums);
+
+
+
+
+//int [] coins = {8, 5, 6};
+//var seke = new Seke();
+// seke.Change(10,coins);
 
 
 

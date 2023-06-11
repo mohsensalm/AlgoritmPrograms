@@ -4,6 +4,36 @@ using AlgoritmPrograms;
 
 
 
+string num = "ab";
+var posible = new Permutations();
+posible.NumTilePossibilities(num);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //var area = new Reactangle();
 //area.ComputeArea(-3, 0,3,4,0,-1,9,2);
@@ -41,9 +71,9 @@ using AlgoritmPrograms;
 
 
 
-int[] coins = { 8, 5, 4 };
-var seke = new Seke();
-seke.Change(20, coins);
+//int[] coins = { 8, 5, 4 };
+//var seke = new Seke();
+//seke.Change(20, coins);
 
 
 

@@ -10,6 +10,7 @@ namespace AlgoritmPrograms
 {
     public class Permutations
     {
+        int count = 0;
 
         //public List<List<int>> permute(int[] nums)
         //{
@@ -278,6 +279,31 @@ namespace AlgoritmPrograms
                     Backtrack(nums, taken, li, ans);
                     taken[i] = false;
                     li.RemoveAt(li.Count - 1);
+                }
+            }
+        }
+
+        public int NumTilePossibilities(string tiles)
+        {
+            var tills = tiles.ToCharArray();
+            Array.Sort(tills);
+            NumTilleHelper(tills, new bool[tiles.Length]);
+            return count - 1;
+
+        }
+
+        public void NumTilleHelper(char[] tills, bool[] taken)
+        {
+            count++;
+            for (int i = 0; i < tills.Length; i++)
+            {
+                if (taken[i] || (i > 0 && tills[i] == tills[i - 1] && !taken[i - 1]))
+                    continue;
+                else
+                {
+                    taken[i] = true;
+                    NumTilleHelper(tills, taken);
+                    taken[i] = false;
                 }
             }
         }
